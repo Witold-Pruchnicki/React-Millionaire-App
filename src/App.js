@@ -76,83 +76,33 @@ function App() {
       ],
     },
   ];
-  const moneyPiramid = useMemo(
+  const moneyPyramid = useMemo(
     () =>
       [
-        {
-          id: 1,
-          amount: "100zł",
-        },
-        {
-          id: 2,
-          amount: "200zł",
-        },
-        {
-          id: 3,
-          amount: "300zł",
-        },
-        {
-          id: 4,
-          amount: "500zł",
-        },
-        {
-          id: 5,
-          amount: "1000zł",
-        },
-        {
-          id: 6,
-          amount: "2000zł",
-        },
-        {
-          id: 7,
-          amount: "4000zł",
-        },
-        {
-          id: 8,
-          amount: "8000zł",
-        },
-        {
-          id: 9,
-          amount: "16000zł",
-        },
-        {
-          id: 10,
-          amount: "32000zł",
-        },
-        ,
-        {
-          id: 11,
-          amount: "64000zł",
-        },
-        ,
-        {
-          id: 12,
-          amount: "125000zł",
-        },
-        ,
-        {
-          id: 13,
-          amount: "250000zł",
-        },
-        ,
-        {
-          id: 14,
-          amount: "500000zł",
-        },
-        ,
-        {
-          id: 15,
-          amount: "1000000zł",
-        },
+        { id: 1, amount: "$ 100" },
+        { id: 2, amount: "$ 200" },
+        { id: 3, amount: "$ 300" },
+        { id: 4, amount: "$ 500" },
+        { id: 5, amount: "$ 1.000" },
+        { id: 6, amount: "$ 2.000" },
+        { id: 7, amount: "$ 4.000" },
+        { id: 8, amount: "$ 8.000" },
+        { id: 9, amount: "$ 16.000" },
+        { id: 10, amount: "$ 32.000" },
+        { id: 11, amount: "$ 64.000" },
+        { id: 12, amount: "$ 125.000" },
+        { id: 13, amount: "$ 250.000" },
+        { id: 14, amount: "$ 500.000" },
+        { id: 15, amount: "$ 1.000.000" },
       ].reverse(),
     []
   );
   useEffect(() => {
     questionNumber > 1 &&
       setEarned(
-        moneyPiramid.find((money) => money.id === questionNumber - 1).amount
+        moneyPyramid.find((money) => money.id === questionNumber - 1).amount
       );
-  }, [moneyPiramid, questionNumber]);
+  }, [moneyPyramid, questionNumber]);
   return (
     <div className="app">
       <div className="main">
@@ -179,7 +129,7 @@ function App() {
       </div>
       <div className="pyramid">
         <ul className="moneyList">
-          {moneyPiramid.map((item) => (
+          {moneyPyramid.map((item) => (
             <li
               className={
                 questionNumber === item.id
