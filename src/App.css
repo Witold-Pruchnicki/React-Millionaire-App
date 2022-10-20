@@ -76,39 +76,43 @@
 }
 
 
-.answer.active{
+.answer.active {
     background: blue;
 }
+
 .answer:hover {
     background: mediumblue;
 }
+
 .answer.correct {
     animation: correct 3s ease forwards;
 }
 
 
 @keyframes correct {
-    0%,22%,42% {
+    0%, 22%, 42% {
         background: mediumblue;
     }
-    20%,40%,60%{
+    20%, 40%, 60% {
         background: linear-gradient(#0e0124, #22074d);
     }
-    62%,100%{
+    62%, 100% {
         background: green;
     }
 }
+
 .answer.incorrect {
     animation: incorrect 3s ease forwards;
 }
+
 @keyframes incorrect {
-    0%,22%,42% {
+    0%, 22%, 42% {
         background: mediumblue;
     }
-    20%,40%,60%{
+    20%, 40%, 60% {
         background: linear-gradient(#0e0124, #22074d);
     }
-    62%,100%{
+    62%, 100% {
         background: red;
     }
 }
@@ -147,4 +151,13 @@
 .moneyListItemAmount {
     font-size: 20px;
     font-weight: 300;
+}
+
+.endText {
+    position: relative;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
 }

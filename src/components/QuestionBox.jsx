@@ -15,15 +15,26 @@ const QuestionBox = ({
   }, [data, questionNumber]);
 
   const delay = (duration, callback) => {
-    setTimeOut(() => {
+    setTimeout(() => {
       callback();
-    },duration);
+    }, duration);
   };
 
   const handleClick = (answer) => {
     setSelectedAnswer(answer);
     setClassName("answer active");
-    delay(3000,()=> setClassName(answer.correct ? "answer correct" : "answer incorrect");)
+    delay(3000, () =>
+      setClassName(answer.correct ? "answer correct" : "answer incorrect")
+    );
+    delay(6000, () => {
+      if (answer.correct) {
+          setClassName( "answer correct")
+        setQuestionNumber((prev) => prev + 1);
+        setSelectedAnswer()
+      } else {
+        setStop(true);
+      }
+    });
     setTimeout(() => {
       setClassName(answer.correct ? "answer correct" : "answer incorrect");
     }, 3000);
